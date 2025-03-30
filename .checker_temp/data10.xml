@@ -12,8 +12,8 @@
   <line>Command: /home/alexia/Desktop/proiect_game_of_life/task1.out /home/alexia/Desktop/proiect_game_of_life/InputData/data10.in /home/alexia/Desktop/proiect_game_of_life/OutputData/data10.out</line>
 </preamble>
 
-<pid>6743</pid>
-<ppid>6718</ppid>
+<pid>13867</pid>
+<ppid>13729</ppid>
 <tool>memcheck</tool>
 
 <args>
@@ -32,13 +32,13 @@
 
 <status>
   <state>RUNNING</state>
-  <time>00:00:00:00.059 </time>
+  <time>00:00:00:00.071 </time>
 </status>
 
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:00:00.857 </time>
+  <time>00:00:00:00.858 </time>
 </status>
 
 <errorcounts>
