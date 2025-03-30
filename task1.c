@@ -2,6 +2,7 @@
 #include "task1.h"
 int nr_vecini_celula(char **matrice, int N, int M, int i, int j)
 {
+//test
     int k = 0;
 
     if (j + 1 < M && matrice[i][j + 1] == 'X')
