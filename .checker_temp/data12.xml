@@ -12,8 +12,8 @@
   <line>Command: /home/alexia/Desktop/nou/game_of_life/task1.out /home/alexia/Desktop/nou/game_of_life/InputData/data12.in /home/alexia/Desktop/nou/game_of_life/OutputData/data12.out</line>
 </preamble>
 
-<pid>20151</pid>
-<ppid>20134</ppid>
+<pid>7220</pid>
+<ppid>7188</ppid>
 <tool>memcheck</tool>
 
 <args>
@@ -38,7 +38,7 @@
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:00:00.894 </time>
+  <time>00:00:00:00.747 </time>
 </status>
 
 <errorcounts>
