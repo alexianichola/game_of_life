@@ -1,5 +1,5 @@
 
-#include "task1.h"
+#include "gameoflife.h"
 
 int main(int argc, const char*  argv[])
 {  

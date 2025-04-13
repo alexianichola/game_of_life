@@ -1,5 +1,5 @@
 
-#include "task1.h"
+#include "gameoflife.h"
 
 void addAtBeginning(Nod** head, Data linie, Data coloana) {
     Nod *newNode = (Nod*)malloc(sizeof(Nod));
