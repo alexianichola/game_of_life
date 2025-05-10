@@ -36,6 +36,24 @@ void push(Node** top, Nod *list) {
     *top = newNode;
 } 
 
+int isEmpty(Node* top) {
+    return top == NULL;
+}
+
+Nod* pop(Node** top) {
+   
+    if (isEmpty(*top)) 
+        return NULL; 
+
+    Node *temp = (*top);
+    Nod* lista = temp->list;
+    *top = (*top)->next;
+    free(temp);
+
+    
+    return lista;
+}
+
 
 void printStack(Node* top, FILE* fisier) {
     if (top == NULL) {
@@ -83,6 +101,44 @@ void deletelist(Nod* head){
     }
 
 }
+
+
+void preorder(Tree* root, FILE* fisier, char **matrice_afisata, int N, int M) {
+    int i = 0, j = 0, linie = 0, coloana = 0;
+
+    if (root) {
+       Nod* aux = root->lista;
+
+       
+        while (aux!=NULL) { 
+
+            linie = aux->linie;
+            coloana = aux->coloana;
+            if(matrice_afisata[linie][coloana] == '+'){
+                matrice_afisata[linie][coloana] = 'X'; }
+            else{
+                matrice_afisata[linie][coloana] = '+';
+            } 
+            aux = aux->next;
+       }   
+       
+       for (i = 0; i < N; i++)
+       {
+           for (j = 0; j < M; j++)
+           {  fprintf(fisier, "%c", matrice_afisata[i][j]);
+          
+        }
+              fprintf(fisier,"\n");
+       }
+      
+         fprintf(fisier,"\n");
+
+        preorder(root->left, fisier, matrice_afisata, N, M);    
+
+        preorder(root->right, fisier, matrice_afisata, N, M);        
+    }
+}
+
 
 int nr_vecini_celula(char **matrice, int N, int M, int i, int j)
 {
@@ -132,6 +188,7 @@ void reguli(char **matrice, char **matrice_noua, int N, int M)
 
             else if (matrice[i][j] == '+' && k == 3){
                 matrice_noua[i][j] = 'X';
+            
                 
             }
 
@@ -141,6 +198,53 @@ void reguli(char **matrice, char **matrice_noua, int N, int M)
         }
     }
  
+}
+
+void reguli_B(char **matrice, char **matrice_noua, int N, int M)
+{   
+    int i, j;
+    int k;
+
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < M; j++)
+        {
+            k = nr_vecini_celula(matrice, N, M, i, j);
+
+             if (k == 2){
+                matrice_noua[i][j] = 'X';
+            
+            }
+            else{
+                matrice_noua[i][j] = matrice[i][j];
+            }
+        }
+    }
+}
+
+Tree* insert(Tree* arbore, Nod* lista, int ok) {
+  
+        if (arbore == NULL){
+                arbore = (Tree*)malloc(sizeof(Tree));
+                arbore->lista = lista;
+                arbore->height = 0; 
+                arbore ->left = arbore->right = NULL;  
+                return arbore;
+              
+        }
+        else {
+    
+         if(ok==1){
+                
+                arbore->left=insert(arbore->left, lista,  ok);
+                
+            }
+            else {
+              
+                arbore->right=insert(arbore->right, lista, ok);
+            }
+        }
+    return arbore;
 }
 
  void schimbari(char **matrice, char **matrice_noua, int N, int M,  Node **stack){
@@ -156,11 +260,58 @@ void reguli(char **matrice, char **matrice_noua, int N, int M)
 
             {    
                 addAtEnd(&lista, i, j);
-                 
+                
 
             }      
           }
    }
    push(stack, lista);
+
+ }
+
+
+
+ void arborele(char **matrice, char **matrice_noua, int N, int M, Tree** arbore, Node **stack, int ok, int level, int K)
+ {  int i, j;
+    Nod* lista=NULL;
+    Nod* lista_schimbari = NULL;
+    
+
+    for (i = 0; i < N; i++)
+    {
+        for (j = 0; j < M; j++)
+        {
+            if (matrice[i][j] == 'X')
+            {
+                addAtEnd(&lista, i, j);
+            }
+        }
+    }
+
+    *arbore = insert(*arbore, lista,  0);
+
+    reguli(matrice, matrice_noua,  N,  M);
+    schimbari(matrice, matrice_noua,  N,  M,  stack);
+    lista_schimbari = pop(stack);
+    *arbore = insert(*arbore, lista_schimbari, 0);
+
+
+
+     for (int i = 0; i < N; i++) {
+        for (int j = 0; j < M; j++) {
+            matrice_noua[i][j] = '+';  
+        }
+    }
+    
+    reguli_B(matrice, matrice_noua,  N,  M);
+    schimbari(matrice, matrice_noua,  N,  M,  stack);
+    lista_schimbari = pop(stack);
+    *arbore = insert(*arbore, lista_schimbari, 1);
+    
+    // arborele(matrice_noua, matrice, N, M, &((*arbore)->left), stack, 1, level + 1); // Stânga pentru regula B
+    // arborele(matrice, matrice_noua, N, M, &((*arbore)->right), stack, 0, level + 1); // Dreapta pentru regulile standard
+    
+
+   
 
  }

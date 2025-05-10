@@ -26,10 +26,10 @@ int main(int argc, const char*  argv[])
             
         
             
-    int T, M, N, K, j, p;
-    char **matrice, **matrice_noua, **aux;
+    int T, M, N, K, j, i , p, ok = 0,level = 0;
+    char **matrice, **matrice_noua, **aux, **matrice_afisata;
     Node* stack=NULL;  
-
+    Tree* arbore=NULL;
     fscanf(input_file, "%d %d %d %d ", &T, &N, &M, &K);
     
     matrice = (char **)malloc(N * sizeof(char *));
@@ -75,7 +75,9 @@ int main(int argc, const char*  argv[])
     fprintf(output_file, "\n");
 
     for (p = 0; p < K; p++){  
+
          if(p > 0){ 
+
             fprintf(output_file, "\n");
 
         }
@@ -122,6 +124,52 @@ int main(int argc, const char*  argv[])
    
     } 
 
+    //task  3
+
+    if ( T == 3 ){
+        
+        for (i = 0; i < N; i++){
+            for (j = 0; j < M; j++){
+            fscanf(input_file, " %c", &matrice[i][j]);
+                   }
+            }
+        matrice_afisata = (char **)malloc(N * sizeof(char *));
+        if (matrice_afisata == NULL) {
+             printf("Eroare la alocarea memoriei pentru matrice.\n");
+            return 0;
+        }
+        for (i = 0; i < N; i++)
+        {
+            matrice_afisata[i] = (char *)malloc(M * sizeof(char));
+            if (matrice_afisata[i] == NULL) {
+                printf("Eroare la alocarea memoriei pentru matrice.\n");
+                return 0;
+            }
+        }  
+        for (i = 0; i < N; i++)
+        {
+           for (j = 0; j < M; j++)
+           {    matrice_afisata[i][j] = '+';
+                }
+        }
+        for (p = 0; p < K; p++) { 
+
+            arborele(matrice, matrice_noua, N, M, &arbore, &stack, ok, level,  K);
+            
+            aux=matrice;
+            matrice = matrice_noua;
+            matrice_noua=aux;  
+        }
+            preorder(arbore, output_file, matrice_afisata, N, M);
+            fprintf(output_file,"\n");
+
+        for (i = 0; i < N; i++) {
+            free(matrice_afisata[i]);
+        }
+        free(matrice_afisata);
+    }
+
+    
 
     
 

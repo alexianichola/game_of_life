@@ -15,6 +15,13 @@ typedef struct Node {
    
 }Node;
 
+typedef struct Tree{
+    int height; 
+    Nod* lista;      
+    struct  Tree *left,*right; 
+}Tree;
+
+
 
 
 int nr_vecini_celula(char **matrice, int N, int M, int i, int j);
@@ -25,3 +32,8 @@ void push(Node** top, Nod* list);
 void printStack(Node* top, FILE* fisier);
 void deletelist(Nod* head);
 void deleteStack(Node** top);
+Tree* insert(Tree* arbore, Nod* lista, int ok);
+void arborele(char **matrice, char **matrice_noua, int N, int M, Tree** arbore, Node **stack, int ok, int level,int K);
+int isEmpty(Node* top);
+Nod* pop(Node** top);
+void preorder(Tree* root, FILE* fisier,char **matrice_afisata, int N, int M);
