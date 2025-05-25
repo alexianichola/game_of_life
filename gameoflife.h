@@ -15,6 +15,12 @@ typedef struct Node {
 
 }Node;
 
+typedef struct Tree {
+    Nod* list;
+    int nivel;
+    struct Tree* left;
+    struct Tree* right;
+} Tree;
 
 
 int nr_vecini_celula(char **matrice, int N, int M, int i, int j);
@@ -28,3 +34,10 @@ void printStack(Node* top, FILE* fisier);
 void deletelist(Nod* head);
 void deleteStack(Node** top);
 Nod* copie_lista(Nod* original);
+Nod* generatii_B( int N, int M,  Nod* lista_intermediara);
+Tree* insert( Nod* lista, int nivel);
+Tree* construiesteArbore( Nod* stare_curenta, int nivel, int N, int M, int K);
+void preordine(Tree* root, char** matrice, int N, int M, FILE* fisier);
+void deleteTree(Tree* root);
+Nod* aplica_diferente_B(Nod* stare_veche, Nod* diferente);
+Nod* aplica_diferente(Nod* stare_veche, Nod* diferente);
