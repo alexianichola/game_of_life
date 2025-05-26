@@ -12,8 +12,8 @@
   <line>Command: /home/alexia/Desktop/nou/game_of_life/task1.out /home/alexia/Desktop/nou/game_of_life/InputData/data17.in /home/alexia/Desktop/nou/game_of_life/OutputData/data17.out</line>
 </preamble>
 
-<pid>36317</pid>
-<ppid>36280</ppid>
+<pid>13680</pid>
+<ppid>13669</ppid>
 <tool>memcheck</tool>
 
 <args>
@@ -32,14 +32,42 @@
 
 <status>
   <state>RUNNING</state>
-  <time>00:00:00:00.053 </time>
+  <time>00:00:00:00.045 </time>
 </status>
 
 
 <status>
   <state>FINISHED</state>
-  <time>00:00:00:00.668 </time>
+  <time>00:00:00:00.527 </time>
 </status>
+
+<error>
+  <unique>0xba</unique>
+  <tid>1</tid>
+  <kind>Leak_DefinitelyLost</kind>
+  <xwhat>
+    <text>10,856 (24 direct, 10,832 indirect) bytes in 1 blocks are definitely lost in loss record 187 of 187</text>
+    <leakedbytes>10856</leakedbytes>
+    <leakedblocks>1</leakedblocks>
+  </xwhat>
+  <stack>
+    <frame>
+      <ip>0x4848858</ip>
+      <obj>/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so</obj>
+      <fn>malloc</fn>
+    </frame>
+    <frame>
+      <ip>0x10A122</ip>
+      <obj>/home/alexia/Desktop/nou/game_of_life/task1.out</obj>
+      <fn>insert</fn>
+    </frame>
+    <frame>
+      <ip>0x1098A8</ip>
+      <obj>/home/alexia/Desktop/nou/game_of_life/task1.out</obj>
+      <fn>main</fn>
+    </frame>
+  </stack>
+</error>
 
 <errorcounts>
 </errorcounts>
