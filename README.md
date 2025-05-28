@@ -72,6 +72,9 @@ Arbore_creat ensures that the rules are applied in a specific order, and preordi
 
   This version of Task 4 creates a graph by transforming the nodes into indices and checking if they are neighbors. It uses adjacency lists and includes a function called DFS_scan, which identifies the first node of each component and stores all components of the graph while populating it. There is also a function named backtrackLongestPath that attempts to find the longest Hamiltonian path in the graph, along with another function named printLongestPathToFile that prints the resulting path in a file.
   Unfortunately, this task does not work correctly.
+  
+## Bonus
+  For the bonus part, I had to create additional files to verify that my output was correct, since the checker does not support testing this functionality directly. I also implemented a dedicated function that performs the reverse operation, which can be easily integrated into the main project if needed.
 
 ## Checker Explanation
 
