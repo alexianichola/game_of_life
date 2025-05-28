@@ -1,5 +1,5 @@
 # Game of life
-Game of Life is a project that creatively explores data structures. Inspired by Conway’s classic Game of Life, this enhanced version integrates core data structures such as: lists, stacks, trees, and graphs to provide developers with a fun and engaging way to practice and understand how these structures work together.
+  Game of Life is a project that creatively explores data structures. Inspired by Conway’s classic Game of Life, this enhanced version integrates core data structures such as: lists, stacks, trees, and graphs to provide developers with a fun and engaging way to practice and understand how these structures work together.
 
 ## Objectives 
 
@@ -17,15 +17,12 @@ Game of Life is a project that creatively explores data structures. Inspired by 
 -  nr_vecini_celula
 - reguli
 
-The nr_vecini_celule function checks all the surrounding cells and counts how many neighbors the current cell has.
-The reguli function applies the rules to the array based on the result from nr_vecini_celule.
+  The nr_vecini_celule function checks all the surrounding cells and counts how many neighbors the current cell has.
+  The reguli function applies the rules to the array based on the result from nr_vecini_celule.
 
-Everything works perfectly, there is only one version of this task.
+  Everything works perfectly, there is only one version of this task.
 
-##Task 2
-Got it! Here’s the updated version with just the function names and your revised description:
 
----
 
 ## Task 2
 
@@ -37,10 +34,10 @@ Got it! Here’s the updated version with just the function names and your revis
 - deleteStack
 - schimbari
 
-The core functions like addAtBeginning, push, printStack, deleteList, and deleteStack do exactly what their names suggest.
-The schimbari function compares the old and new array and adds the changes to a list, which will be pushed into the stack.
+ The core functions like addAtBeginning, push, printStack, deleteList, and deleteStack do exactly what their names suggest.
+ The schimbari function compares the old and new array and adds the changes to a list, which will be pushed into the stack.
 
-There are two versions of this task, one that works with arrays and one that works only with lists. And the principle is the same but there are a few changes. You can find the firts version with arays at commit "Added task 2" and the version with lists at "Task 2 using lists".
+ There are two versions of this task, one that works with arrays and one that works only with lists. And the principle is the same but there are a few changes. You can find the firts version with arays at commit "Added task 2" and the version with lists at "Task 2 using lists".
 
 
 ## Task 3
@@ -54,11 +51,11 @@ There are two versions of this task, one that works with arrays and one that wor
 - copie_matrice 
   
 
-The functions insert,deleteTree and copie_matrice do exactly what their names suggest.
-The reguli_B function applies the new rule to the tree.
+ The functions insert,deleteTree and copie_matrice do exactly what their names suggest.
+ The reguli_B function applies the new rule to the tree.
 Arbore_creat ensures that the rules are applied in a specific order, and preordine populates the tree.
 
-There are three versions of Task 3:
+  There are three versions of Task 3:
 - The first version works with arrays and uses the functions listed above — this version works correctly for the entire tree.
 - The second version uses lists — it does not work properly, stopping after the sixth node.
 - The third version tries to use lists based on the array version from Task 2 — this version also stops after the sixth tree node and does not function fully.
@@ -78,12 +75,12 @@ There are three versions of Task 3:
 
 ## Checker Explanation
 
-The project includes a checker — an automated script that verifies the correctness and quality of your program. It performs several checks:
-Memory Check: Verifies that there are no memory leaks or illegal memory accesses (typically using tools like valgrind).
-Style Check: Ensures the code follows the required coding style (indentation, naming, formatting, etc.).
-Output Check: Compares the program’s output to the expected output to confirm correctness.
-The checker runs your implementation against a set of predefined tests and reports whether each part passes or fails.
+  The project includes a checker — an automated script that verifies the correctness and quality of your program. It performs several checks:
+- Memory Check: Verifies that there are no memory leaks or illegal memory accesses (typically using tools like valgrind).
+- Style Check: Ensures the code follows the required coding style (indentation, naming, formatting, etc.).
+- Output Check: Compares the program’s output to the expected output to confirm correctness.
+  The checker runs your implementation against a set of predefined tests and reports whether each part passes or fails.
 
 ## Credits
 
-This project was developed as part of the Algorithm Design course at the University Politehnica of Bucharest, during the academic semester. Enjoy!
+  This project was developed as part of the Algorithm Design course at the University Politehnica of Bucharest, during the academic semester. Enjoy!
