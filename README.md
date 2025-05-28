@@ -17,10 +17,10 @@
 -  nr_vecini_celula
 - reguli
 
-  The nr_vecini_celule function checks all the surrounding cells and counts how many neighbors the current cell has.
-  The reguli function applies the rules to the array based on the result from nr_vecini_celule.
+The nr_vecini_celule function checks all the surrounding cells and counts how many neighbors the current cell has.
+The reguli function applies the rules to the array based on the result from nr_vecini_celule.
 
-  Everything works perfectly, there is only one version of this task.
+Everything works perfectly, there is only one version of this task.
 
 
 
@@ -70,7 +70,8 @@ Arbore_creat ensures that the rules are applied in a specific order, and preordi
 - backtrackLongestPath
 - printLongestPathToFile
 
-  This version of Task 4 creates a graph by transforming the nodes into indices and checking if they are neighbors. It uses adjacency lists and includes a function called DFS_scan, which identifies the first node of each component and stores all components of the graph while populating it. There is also a function named backtrackLongestPath that attempts to find the longest Hamiltonian path in the graph, along with another function named printLongestPathToFile that prints the resulting path in a file.
+ This version of Task 4 creates a graph by transforming the nodes into indices and checking if they are neighbors. It uses adjacency lists and includes a function called DFS_scan, which identifies the first node of each component and stores all components of the graph while populating it. There is also a function named backtrackLongestPath that attempts to find the longest Hamiltonian path in the graph, along with another function named printLongestPathToFile that prints the resulting path in a file.
+  
   Unfortunately, this task does not work correctly.
   
 ## Bonus
