@@ -20,7 +20,7 @@
 The nr_vecini_celule function checks all the surrounding cells and counts how many neighbors the current cell has.
 The reguli function applies the rules to the array based on the result from nr_vecini_celule.
 
-Everything works perfectly, there is only one version of this task.
+Everything works perfectly, there is only one version of this task. Commit "task 1 complete"
 
 
 
@@ -56,9 +56,9 @@ Everything works perfectly, there is only one version of this task.
 Arbore_creat ensures that the rules are applied in a specific order, and preordine populates the tree.
 
   There are three versions of Task 3:
-- The first version works with arrays and uses the functions listed above — this version works correctly for the entire tree.
-- The second version uses lists — it does not work properly, stopping after the sixth node.
-- The third version tries to use lists based on the array version from Task 2 — this version also stops after the sixth tree node and does not function fully.
+- The first version works with arrays and uses the functions listed above — this version works correctly for the entire tree. Commit: "Task 3 update"
+- The second version uses lists — it does not work properly, stopping after the sixth node. Commit: "Task 3 using lists"
+- The third version tries to use lists based on the array version from Task 2 — this version also stops after the sixth tree node and does not function fully. Commit: "New approach on Task 3"
 
 ## Task 4
 ### Functions:
@@ -70,12 +70,12 @@ Arbore_creat ensures that the rules are applied in a specific order, and preordi
 - backtrackLongestPath
 - printLongestPathToFile
 
- This version of Task 4 creates a graph by transforming the nodes into indices and checking if they are neighbors. It uses adjacency lists and includes a function called DFS_scan, which identifies the first node of each component and stores all components of the graph while populating it. There is also a function named backtrackLongestPath that attempts to find the longest Hamiltonian path in the graph, along with another function named printLongestPathToFile that prints the resulting path in a file.
+ This version of Task 4 creates a graph by transforming the nodes into indices and checking if they are neighbors. It uses adjacency lists and includes a function called DFS_scan, which identifies the first node of each component and stores all components of the graph while populating it. There is also a function named backtrackLongestPath that attempts to find the longest Hamiltonian path in the graph, along with another function named printLongestPathToFile that prints the resulting path in a file. Commit: "Task 4"
   
   Unfortunately, this task does not work correctly.
   
 ## Bonus
-  For the bonus part, I had to create additional files to verify that my output was correct, since the checker does not support testing this functionality directly. I also implemented a dedicated function that performs the reverse operation, which can be easily integrated into the main project if needed.
+  For the bonus part, I had to create additional files to verify that my output was correct, since the checker does not support testing this functionality directly. I also implemented a dedicated function that performs the reverse operation, which can be easily integrated into the main project if needed. Commit: "Bonus task 2"
 
 ## Checker Explanation
 
